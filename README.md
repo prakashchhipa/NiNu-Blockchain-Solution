@@ -1,6 +1,8 @@
 # NiNu-Blockchain-Solution
 Educational purpose python based blockchain implementation
 
+![alt text](https://github.com/prakashchhipa/NiNu-Blockchain-Solution/blob/master/NiNu.jpg)
+
 NiNu's Blockchain:
 NiNu's blockchain is educational purpose python based blockchain implementation which demonstrate core concepts. It covers P2P network connections, transaction handling, block creation, block minng, consensus building, blockchain modification attempt and its counter effects.
 
