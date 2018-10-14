@@ -1,21 +1,25 @@
 # NiNu-Blockchain-Solution
-Educational purpose python based blockchain implementation
+Educational purpose python based blockchain implementation.
 
+**Yes, I 'm NiNu and this blockchain solution is all about my idea, please have a look :)**
 ![alt text](https://github.com/prakashchhipa/NiNu-Blockchain-Solution/blob/master/NiNu.jpg)
 
-NiNu's Blockchain:
+**NiNu's Blockchain:**
 NiNu's blockchain is educational purpose python based blockchain implementation which demonstrate core concepts. It covers P2P network connections, transaction handling, block creation, block minng, consensus building, blockchain modification attempt and its counter effects.
 
-Required Libraries:
-1) flask
-2) flask.ext.cors
-3) json
-4) requests
-5) urllib
-6) uuid
-7) hashlib
-8) time
+**Execution Environment & Required Libraries:**
+  1. Python 2.x
+  2. Libraries
+    - flask
+    - flask.ext.cors
+    - json
+    - requests
+    - urllib
+    - uuid
+    - hashlib
+    - time
 
+**Solution:**
 
 Following are the classes developed for solution:
 1) Transaction.py - Defines an entity of transaction between two parties
@@ -23,8 +27,8 @@ Following are the classes developed for solution:
 3) BlockchainOperation.py - All the operations of blockchain are implemented in this class
 4) BlockchainNodeRunner.py - Blockchain operations are exposed as REST API
 
-
-1) Running Nodes - Run multiple miner nodes and check the node miner details calling API in browser mentioned below:
+**Steps to Run All th Components With Examples**
+**1) Running Nodes** - Run multiple miner nodes and check the node miner details calling API in browser mentioned below:
    1. python BlockchainNodeRunner.py -p 8080
 		Command: Open browser and hit the URI: http://192.168.0.13:8080/
 		Result: Chip blockchain node {'309e4a5e-92e3-4ae0-a880-cb83d59e7a3c'} running at 0.0.0.0-8080
@@ -34,7 +38,7 @@ Following are the classes developed for solution:
 	 
 	Note: node id could be different every time it is being started
 	
-2) Node Registration - Each node registers the other nodes to make P2P mesh (currently it is don thorugh RESP API manually. Later on it can be automatic using zookeeper)
+**2) Node Registration** - Each node registers the other nodes to make P2P mesh (currently it is don thorugh RESP API manually. Later on it can be automatic using zookeeper)
 	Command: Open google chrome app postman (REST API client) and call following APIs
 	1. Node1 (309e4a5e-92e3-4ae0-a880-cb83d59e7a3c):
 		http://192.168.0.13:8081/node/registration?nodelist=http://192.168.0.13:8080
@@ -55,7 +59,7 @@ Following are the classes developed for solution:
 			]
 		}
 	
-3) Making New Transaction - Now add some transactions in each nodes using new transaction API
+**3) Making New Transaction** - Now add some transactions in each nodes using new transaction API
 	Command: Open google chrome app postman (REST API client) and call following APIs
 	Node1 (309e4a5e-92e3-4ae0-a880-cb83d59e7a3c):
 	1. http://192.168.0.13:8080/node/transaction/new?sender=ninu&recipient=prakash&quantity=1500&message=fee
@@ -106,7 +110,7 @@ Following are the classes developed for solution:
 	}
 	
 	
-4. Performing Mining Operation - It adds up latest block into the node's it own version of blockchain  
+**4. Performing Mining Operation** - It adds up latest block into the node's it own version of blockchain  
     Command: Open google chrome browser and call following APIs
 	1. Node1 (309e4a5e-92e3-4ae0-a880-cb83d59e7a3c):
    	 http://192.168.0.13:8080/node/mine
@@ -128,7 +132,7 @@ Following are the classes developed for solution:
 	Note: Repeat step 3 & 4 multiple times, preferably in odd fashion that one miner get more block mining than others.
 
 	
-5. Checking Individual Node's Blockchain - until consensus is build each node will have their own version of blockchain
+**5. Checking Individual Node's Blockchain** - until consensus is build each node will have their own version of blockchain
    	Command: Open google chrome browser and call following APIs
 	1. Node1 (309e4a5e-92e3-4ae0-a880-cb83d59e7a3c):
 	http://192.168.0.13:8080/node/blockchain
@@ -326,7 +330,7 @@ Following are the classes developed for solution:
 		}]
 	}
 	
-5. Consensus Building - Simple rule is made for consensus, miner who has longer and valid chain will become global chain and to be adapted by other miners.
+**5. Consensus Building** - Simple rule is made for consensus, miner who has longer and valid chain will become global chain and to be adapted by other miners.
  -Call consensus API to any of one node (preferably the node which has less number of blocks becuase there we can observe blockchain replacement by the node which has biggest valid blockchain for now.)
  Command: http://192.168.0.13:8081/node/consensus
  Result(observe status field):
@@ -374,7 +378,7 @@ Following are the classes developed for solution:
 
 	Note: Even a node recieves longer blockchain but status of blockchain is invalid due to modification then during consensus this type of blockchain is not considered.
 	
-6. Adding Transaction in Previous Block(Attempting to modify the blockchain) - During validation and consensus building a modified blokchain will be treated as invalid blockchain	
+**6. Adding Transaction in Previous Block(Attempting to modify the blockchain)** - During validation and consensus building a modified blokchain will be treated as invalid blockchain	
  Command(POST API in Google Chrome POSTMAN): http://192.168.0.13:8080/node/addinvalidtransaction?sender=prakash&recipient=meenu&quantity=46&message=lbutoo&blocknumber=2
  Result:
  {
@@ -387,20 +391,24 @@ Following are the classes developed for solution:
         "sender": "prakash"
     }
 }
-Note: After attemping above operation, do not forget to check validity of blockchain
+**Note:** After attemping above operation, do not forget to check validity of blockchain
 
-7. Blockchain Validation - As blockchain was modified so result shows invalidate blockchain
+**7. Blockchain Validation** - As blockchain was modified so result shows invalidate blockchain
  Command(Google Browser): http://192.168.0.13:8080/node/validate-blockchain
  Result:
  {
   "status": "Invalid blockchain"
  }
+	
+**Note for other Enthusiastic Contributor:**
 
-	
-	
 Geeks are welcome to further contribute and improvise this educational purpose blockchain ecosystem in following area:
 1) Auto discovery and registration process to make system better 
 2) Transactions could be shared across the nodes to add them in their individual blokchain and which mine first will win the race.
 3) Consensus mechanism could be more comprehensive in which voting of other nodes can be introduced to validate mining/proof of work.
 4) A UI to perform all the operations which are currently demonstrated through API calls
 5) Anything you find towards betterment
+
+**Queries?...Connect with me at:**
+ 1) LinkedIn: https://linkedin.com/in/prakash-chandra-chhipa
+ 2) Email: prakash.chandra.chhipa@gmail.com
