@@ -22,12 +22,17 @@ NiNu's blockchain is educational purpose python based blockchain implementation 
 **Solution:**
 
 Following are the classes developed for solution:
+
 **1) Transaction.py** - Defines an entity of transaction between two parties
+
 **2) Block.py** - Defines a block strcuture which contains all the required details of particular block
+
 **3) BlockchainOperation.py** - All the operations of blockchain are implemented in this class
+
 **4) BlockchainNodeRunner.py** - Blockchain operations are exposed as REST API
 
-**Steps to Run All th Components With Examples**
+**Steps to Run All th Components With Examples:**
+
 **1) Running Nodes** - Run multiple miner nodes and check the node miner details calling API in browser mentioned below:
    1. python BlockchainNodeRunner.py -p 8080
 		Command: Open browser and hit the URI: http://192.168.0.13:8080/
