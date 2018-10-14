@@ -1,7 +1,7 @@
 # NiNu-Blockchain-Solution
 Educational purpose python based blockchain implementation.
 
-**Yes, I 'm NiNu and this blockchain solution is all about my idea, please have a look :)**
+**Yes, I 'm NiNu and this blockchain solution is all about my idea while i was on europe trip, please have a look :)**
 ![alt text](https://github.com/prakashchhipa/NiNu-Blockchain-Solution/blob/master/NiNu.jpg)
 
 **NiNu's Blockchain:**
